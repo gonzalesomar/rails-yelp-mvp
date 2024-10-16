@@ -1,0 +1,8 @@
+
+<div class="container mt-5">
+  <h2 class="text-primary"> <%= @restaurant.name %></h2>
+  <p> Addres: <%= @restaurant.address %></p>
+  <p> Category: <%= @restaurant.category.capitalize %></p>
+  <p> Phone: <%= @restaurant.phone_number %></p>
+  <%= link_to 'Return', restaurants_path, class: "btn btn-primary" %>
+</div>

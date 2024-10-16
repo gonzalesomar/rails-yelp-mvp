@@ -1,0 +1,15 @@
+<h1 class="mb-5 mt-5 text-success"> Yelp Reviews of Restaurants </h1>
+
+<div class="d-flex justify-content-around">
+<% @restaurants.each do |restaurant| %>
+  <div class="card m-3 p-3 border border-warning" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+      <h2 class="card-title text-primary"> <%= restaurant.name %> </h2>
+      <li class="list-group-item"> <%= restaurant.address %> </li>
+      <li class="list-group-item"> <%= restaurant.category.capitalize %> </li>
+      <li class="list-group-item"> <%= restaurant.phone_number %> </li>
+      <%= link_to 'Show', restaurant_path(restaurant), class: "btn btn-primary mt-5" %>
+    </ul>
+  </div>
+<% end %>
+</div>
