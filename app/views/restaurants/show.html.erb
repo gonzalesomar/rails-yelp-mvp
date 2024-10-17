@@ -4,5 +4,22 @@
   <p> Addres: <%= @restaurant.address %></p>
   <p> Category: <%= @restaurant.category.capitalize %></p>
   <p> Phone: <%= @restaurant.phone_number %></p>
-  <%= link_to 'Return', restaurants_path, class: "btn btn-primary" %>
+
+</div>
+
+<div class="container mt-5">
+  <h3 class="text-primary"> Reviews </h3>
+  <% @restaurant.reviews.each do |review| %>
+    <div class="card m-3 p-3 border border-warning" style="width: 18rem;">
+      <ul class="list-group list-group-flush">
+        <li class="list-group item"> <%= review.content %> </li>
+        <li class="list-group item"> Rating: <%= review.rating %> </li>
+      </ul>
+    </div>
+  <% end %>
+</div>
+
+<div class="container mt-5">
+  <%= link_to 'Return', restaurants_path, class: "btn btn-primary m" %>
+  <%= link_to 'Nuevo Review', new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
 </div>
